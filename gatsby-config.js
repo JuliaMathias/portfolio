@@ -7,6 +7,26 @@ module.exports = {
   siteMetadata,
   plugins: [
     `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 640,
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/`,
+      },
+    },
     `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
