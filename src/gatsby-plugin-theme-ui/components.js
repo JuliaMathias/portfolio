@@ -1,6 +1,8 @@
 import Prism from "@theme-ui/prism";
 
-export default {
+const exportedObject = {
   pre: (props) => props.children,
   code: Prism,
 };
+
+export default exportedObject;
